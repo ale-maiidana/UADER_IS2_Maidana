@@ -1,16 +1,17 @@
-#!/usr/bin/python3
-# Python program to display all the prime numbers within an interval
+# Programa que calcula y muestra los números primos entre 1 y 500
 
-lower = 1
-upper = 500
+# Recorremos todos los números en el rango indicado
+for num in range(1, 501):
 
-print("Prime numbers between", lower, "and", upper, "are:")
+    # Asumimos inicialmente que el número es primo
+    is_prime = True
 
-for num in range(lower, upper + 1):
-   # all prime numbers are greater than 1
-   if num > 1:
-       for i in range(2, num):
-           if (num % i) == 0:
-               break
-       else:
-           print(num)
+    # Verificamos si tiene divisores distintos de 1 y de sí mismo
+    for i in range(2, num):
+        if num % i == 0:
+            is_prime = False
+            break
+
+    # Si sigue siendo primo, lo mostramos
+    if is_prime and num > 1:
+        print(num)
