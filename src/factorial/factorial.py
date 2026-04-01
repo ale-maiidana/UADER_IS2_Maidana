@@ -23,6 +23,11 @@ def factorial(num):
 if len(sys.argv) == 0:
    print("Debe informar un número!")
    sys.exit()
-num=int(sys.argv[1])
+if len(sys.argv) < 2:
+    num = int(input("Ingrese un número: "))
+else:
+    num = int(sys.argv[1])
 print("Factorial ",num,"! es ", factorial(num)) 
+
+import sys
 
